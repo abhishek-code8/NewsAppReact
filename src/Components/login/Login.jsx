@@ -95,6 +95,7 @@ class Login extends React.Component {
     }
     render() {
         return (
+            <div className="container">
             <Form>
                 <FormErrors errors={this.state.formError}></FormErrors>
                 <Form.Group>
@@ -112,6 +113,7 @@ class Login extends React.Component {
                     Submit
   </Button>
             </Form>
+            </div>
         )
     }
 }
