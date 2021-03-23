@@ -16,20 +16,20 @@ class NewsCard extends React.Component {
     // async EntryFunc(objectArticle) {
     //     await writeJsonFile('../../db.json', objectArticle);
     // }
-    handleClick = (obj)=>{
+    // handleClick = (obj)=>{
            
-        fs.readFile('src/db.json', (err, data) => {
-        if (err) throw err;
-        let newarray= JSON.parse(data);
-        newarray.push(this.props.a);
-        fs.writeFile("src/db.json", JSON.stringify(newarray,null,2), err => { 
-            if(err) throw err;
-            console.log("Success in db.json");
-        }); 
+    //     fs.readFile('src/db.json', (err, data) => {
+    //     if (err) throw err;
+    //     let newarray= JSON.parse(data);
+    //     newarray.push(this.props.a);
+    //     fs.writeFile("src/db.json", JSON.stringify(newarray,null,2), err => { 
+    //         if(err) throw err;
+    //         console.log("Success in db.json");
+    //     }); 
     
-        })
+    //     })
     
-    }
+    // }
 
 
     render() {
@@ -41,7 +41,7 @@ class NewsCard extends React.Component {
                     <Card.Text>
                         {this.props.a.content}
                     </Card.Text>
-                    <Button variant="primary" onClick={()=>this.props.addFunction(this.props.a)}>Read More</Button>
+                    <Button variant="primary">Read More</Button>
                 </Card.Body>
             </Card>
         )

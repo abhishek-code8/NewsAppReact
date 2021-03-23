@@ -4,7 +4,7 @@ import NewsCard from '../card/Card';
 
 
 
-class Dashboard extends React.Component {
+class DisplayCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,16 +23,23 @@ class Dashboard extends React.Component {
                     apidata: data
                 });
             });
-        //console.log(this.state.apidata);
+        console.log( this.state.apidata);
     }
 
+    async addNews(news){ 
+        console.log(news);
+       await fetch("http://localhost:3001/api/v1/news",{method: "post",headers:{'content-Type':"application/json"},body: JSON.stringify(news),});
+        console.log("added");
+    }
     dbStore(obj){
         let newdb = this.state.dbJson;
         newdb.push(obj);
+        this.addNews=(newdb);
         this.setState({
             dbJson:newdb
         })     
-        console.log(newdb);   
+        
+        console.log("hello");   
     }
 
 
@@ -54,4 +61,4 @@ class Dashboard extends React.Component {
     }
 }
 
-export default Dashboard;
+export default DisplayCard;

@@ -37,7 +37,7 @@ class Login extends React.Component {
         let passwordValid = this.state.passwordvalid;
         switch (fieldname) {
             case 'username':
-                usernameValid = value != null && value.length >= 6;
+                usernameValid = value != null && value.length >= 3;
                 fieldvalidationerror.username = usernameValid ? '' : 'is inValid';
                 break;
             case 'password':
@@ -64,30 +64,28 @@ class Login extends React.Component {
 
     loginUser = (event) => {
         event.preventDefault();
+        console.log(this.state.username+" "+this.state.password);
        
         if (this.state.formvalid) {
             let auth = loginService(this.state.username, this.state.password)
-
+            
             auth.then((data) => {
                 console.log(data.token);
                 localStorage.setItem('token', data.token);
-                localStorage.setItem('username', this.state.username)
-                this.setState({
-                    token: data.token
-                })
-            })
-            // console.log(localStorage.getItem('token'));
-            if (this.state.token != '') {
+                localStorage.setItem('username', this.state.username);
+                console.log("done local");
+            
+            if (localStorage.getItem('token') !== undefined) {
 
                 let { history } = this.props;
                 history.push({
-                    pathname: '/dashboard'
+                    pathname: '/displaycard'
                 })
             }
             else {
                 alert("Username and Password is invalid");
             }
-
+        });
         }
         else {
             console.log("SomeThing Wrong");
@@ -100,7 +98,7 @@ class Login extends React.Component {
                 <FormErrors errors={this.state.formError}></FormErrors>
                 <Form.Group>
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control name="username" type="email" placeholder="Enter email" value={this.state.username} onChange={this.handleUserInput} />
+                    <Form.Control name="username" type="text" placeholder="Enter email" value={this.state.username} onChange={this.handleUserInput} />
 
                 </Form.Group>
 
