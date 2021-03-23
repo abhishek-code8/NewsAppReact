@@ -7,7 +7,7 @@ import Footer from './Components/footer/Footer';
 import DisplayCard from './Components/displaycard/DisplayCard';
 import { Route, Switch,BrowserRouter as Router, Redirect } from 'react-router-dom';
 
-import ReadNow from './Components/readnow/ReadNow';
+import ReadNow from './Components/readNow/ReadNow';
 import Login from './Components/login/Login';
 import Register from './Components/register/Register';
 // import Container from 'react-bootstrap/Container'
