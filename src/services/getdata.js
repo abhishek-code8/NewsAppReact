@@ -12,4 +12,4 @@ let url =  "http://localhost:3001/api/v1/news" ;
     return await response.json();
 }
 
-module.exports = getdata;
+export default getdata;

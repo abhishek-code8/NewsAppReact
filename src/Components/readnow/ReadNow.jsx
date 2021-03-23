@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import readnowService from '../../services/readNow';
-import getdata from './getdata';
+import getdata from '../../services/getdata';
 import NewsCard from '../card/Card';
 import Row from 'react-bootstrap/Row';
 

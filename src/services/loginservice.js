@@ -17,4 +17,4 @@ async function loginService(username, password){
     return await response.json();
 }
 
-module.exports =loginService;
+export default loginService;

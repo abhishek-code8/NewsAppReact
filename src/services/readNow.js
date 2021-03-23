@@ -18,4 +18,4 @@ return await response.json();
 }
 
 
-module.exports =readNowService;
+export default readNowService;
