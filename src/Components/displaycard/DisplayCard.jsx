@@ -15,10 +15,11 @@ class DisplayCard extends React.Component {
     }
 
     componentDidMount() {
-        let url = "http://newsapi.org/v2/everything?q=apple&from=2021-03-16&to=2021-03-16&sortBy=popularity&apiKey=75b7ea3d15c34d96a7dd0dc273787e17";
+        let url = "https://newsapi.org/v2/everything?q=tesla&from=2021-04-27&sortBy=publishedAt&apiKey=75b7ea3d15c34d96a7dd0dc273787e17";
         fetch(url)
             .then((response) => response.json())
             .then(data => {
+                console.log(data);
                 this.setState({
                     apidata: data
                 });
